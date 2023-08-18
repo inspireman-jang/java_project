@@ -3,6 +3,8 @@ package co.yedam.exceptions;
 //예외 : 프로그램이 정상적으로 종료시점까지 진행.
 public class NullPointExe {
 	public static void main(String[] args) {
+		
+		
 		String msg = null;
 		
 		msg = "123";
