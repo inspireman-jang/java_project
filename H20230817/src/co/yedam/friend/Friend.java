@@ -38,6 +38,10 @@ public class Friend {
 		return "이름은 " + name + " 연락처는 " + phone;
 	}
 	
-	
+	@Override
+		public boolean equals(Object obj) {
+			// TODO Auto-generated method stub
+			return super.equals(obj);
+		}
 	
 }
