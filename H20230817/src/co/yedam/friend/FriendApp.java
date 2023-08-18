@@ -1,5 +1,6 @@
 package co.yedam.friend;
 
+import java.util.InputMismatchException;
 //컨트롤 + 쉬프트 + o (임포트 단축키)
 import java.util.Scanner;
 
@@ -17,8 +18,14 @@ public class FriendApp {
 		while (run) {
 			System.out.println("1.추가 2.조회 3.수정 4.삭제 5.종료");
 			System.out.print("선택>> ");
-			menu = scn.nextInt();
-			scn.nextLine();
+			try {
+				menu = scn.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("숫자를 입력해주세요");
+				continue;
+			} finally {
+				scn.nextLine();
+			}
 
 			switch (menu) {
 			case 1:
@@ -51,10 +58,29 @@ public class FriendApp {
 
 	// 등록
 	private void addFriend() {
-		System.out.println("1.학교 2.회사 3.기타");
-		System.out.print("선택>> ");
-		int subMenu = scn.nextInt();
-		scn.nextLine();
+
+		int subMenu = -1;
+
+		while (true) {
+			System.out.println("1.학교 2.회사 3.기타");
+			System.out.print("선택>> ");
+			try {
+				subMenu = scn.nextInt();
+
+				if (subMenu < 1 || subMenu > 3) {
+					System.out.println("1 2 3 중에 선택해 주세요.");
+					continue;
+				}
+				break;
+
+			} catch (InputMismatchException e) {
+				System.out.println("숫자를 입력해주세요.");
+				continue;
+			} finally {
+				scn.nextLine();
+
+			}
+		}
 
 		Friend friend = null;
 
@@ -104,15 +130,15 @@ public class FriendApp {
 						System.out.println(friends[i].showInfo());
 						cnt = false;
 						break;
-					}else {
+					} else {
 						cnt = true;
 					}
-				}				
+				}
 			}
 			if (cnt == true) {
-				System.out.println("해당 이름이 없습니다.");			
+				System.out.println("해당 이름이 없습니다.");
 			}
-			
+
 		}
 
 	}
@@ -129,13 +155,13 @@ public class FriendApp {
 					friends[i].setPhone(phone);
 					cnt = false;
 					break;
-				}else {
+				} else {
 					cnt = true;
 				}
 			}
 		}
 		if (cnt == true) {
-			System.out.println("해당 이름이 없습니다.");			
+			System.out.println("해당 이름이 없습니다.");
 		}
 	}
 
@@ -146,18 +172,18 @@ public class FriendApp {
 
 		for (int i = 0; i < friends.length; i++) {
 			if (friends[i] != null) {
-				if (friends[i].getName().equals(name)) {					
+				if (friends[i].getName().equals(name)) {
 					friends[i] = null;
 					cnt = false;
 					break;
 				}
 			} else {
 				cnt = true;
-			}			
+			}
 		}
-		
+
 		if (cnt == true) {
-			System.out.println("해당 이름이 없습니다.");			
+			System.out.println("해당 이름이 없습니다.");
 		}
 	}
 }
