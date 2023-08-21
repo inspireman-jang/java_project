@@ -12,14 +12,16 @@ import java.util.Scanner;
 
 import javax.swing.JFileChooser;
 
-import co.yedam.friend.Friend;
+import co.yedam.friend.Friend1;
 
 public class FriendApp {
-	List<Friend> friends = new ArrayList<>();
+	List<Friend1> friends = new ArrayList<>();
 	Scanner scn = new Scanner(System.in);
+	SimpleDateFormat sdf = new SimpleDateFormat("yyMMdd");
 	JFileChooser jfc = new JFileChooser();
+//	File file = new File("c:/Users/Main/git/java_project/H20230821/src/co/yedam/stream/friends.txt");
 	File file = null;
-
+	
 	public FriendApp() {
 		fileSelect();
 		loadFile();
@@ -61,24 +63,25 @@ public class FriendApp {
 		}
 	}
 
-	SimpleDateFormat sdf = new SimpleDateFormat("yyMMdd");
+	
 
 	private void add() {
 		String name = printString("이름입력");
 		String phone = printString("연락처입력");
 		String birth = printString("생일입력(950603");
+		
 
 		try {
-			Friend fnd = new Friend(name, phone, sdf.parse(birth));
+			Friend1 fnd = new Friend1(name.strip(), phone, sdf.parse(birth));
 			friends.add(fnd);
-		} catch (ParseException e) {
+		} catch (Exception e) {
 			System.out.println(e);
 		}
 	}
 
 	private void list() {
 
-		for (Friend fnd : friends) {
+		for (Friend1 fnd : friends) {
 			System.out.println(fnd);
 		}
 
@@ -90,7 +93,7 @@ public class FriendApp {
 		try {
 			FileWriter fw = new FileWriter(file);
 
-			for (Friend fnd : friends) {
+			for (Friend1 fnd : friends) {
 				String line = fnd.getName() + " " + fnd.getPhone() //
 						+ " " + sdf.format(fnd.getBirth());
 				fw.write(line + "\n");
@@ -120,7 +123,7 @@ public class FriendApp {
 
 			String[] data = line.split(" ");
 			try {
-				friends.add(new Friend(data[0], data[1], sdf.parse(data[2])));
+				friends.add(new Friend1(data[0], data[1], sdf.parse(data[2])));
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

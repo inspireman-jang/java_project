@@ -3,12 +3,12 @@ package co.yedam.friend;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Friend {
+public class Friend1 {
 	private String name;
 	private String phone;
 	private Date birth;
 
-	public Friend(String name, String phone, Date birth) {
+	public Friend1(String name, String phone, Date birth) {
 		super();
 		this.name = name;
 		this.phone = phone;
