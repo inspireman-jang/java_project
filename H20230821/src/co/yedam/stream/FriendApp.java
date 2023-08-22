@@ -23,17 +23,14 @@ public class FriendApp {
 	public FriendApp() {
 		fileSelect();
 		loadFile();
-		
-	}	
-	
+	}
+
 	private void fileSelect() {
 		int returnVal = jfc.showOpenDialog(null);
-		if(returnVal==0)
-		{
+		if (returnVal == 0) {
 			file = jfc.getSelectedFile();
 			System.out.println("파일 열기를 선택했습니다.");
-		}else
-		{
+		} else {
 			System.out.println("파일 열기를 취소하였습니다.");
 		}
 //		File file = new File("c:/temp/friendList.txt");
