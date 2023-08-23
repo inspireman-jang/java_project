@@ -26,4 +26,7 @@ public interface BoardService {
 	
 	// 종료 될때 파일 저장.
 	public void save();
+	
+	// 글번호 - 작성자 반환
+	public String getResponseUser(int brdNo);
 }

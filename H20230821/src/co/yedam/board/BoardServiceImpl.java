@@ -134,4 +134,15 @@ public class BoardServiceImpl implements BoardService {
 		return boardList.size();
 	}
 
+	@Override
+	public String getResponseUser(int brdNo) {
+		// TODO Auto-generated method stub
+		for(int i=0; i <boardList.size(); i++) {
+			if(boardList.get(i).getBrdNo() == brdNo){
+				return boardList.get(i).getBrdWriter();
+			}
+		}
+		return null;
+	}
+
 }
