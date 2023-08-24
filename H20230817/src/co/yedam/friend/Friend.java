@@ -1,5 +1,7 @@
 package co.yedam.friend;
 
+import java.util.Date;
+
 public class Friend {
 	
 //	친구연락처 정보.
@@ -12,7 +14,7 @@ public class Friend {
 	
 	
 	//생성자 메소드
-	public Friend(String name, String phone) {
+	public Friend(String name, String phone, Date date) {
 		this.name = name;
 		this.phone = phone;
 	}

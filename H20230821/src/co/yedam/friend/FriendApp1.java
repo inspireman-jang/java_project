@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-public class FriendApp {
+public class FriendApp1 {
 	// 추가, 수정, 삭제, 목록
 	// 리스트 타입으로 Friend 인스턴스 생성을 할 것이다.
 	// 변수 이름은 friends이다.
-	List<Friend> friends = new ArrayList<Friend>();
+	List<Friend1> friends = new ArrayList<Friend1>();
 	Map<String, String> userList = new HashMap<>();
 	Scanner scn = new Scanner(System.in);
 	SimpleDateFormat sdf = new SimpleDateFormat("yyMMdd");
@@ -21,7 +21,7 @@ public class FriendApp {
 	String phone = "";
 	Date dt;
 
-	public FriendApp() {
+	public FriendApp1() {
 		userList.put("user1", "1234");
 		userList.put("user2", "2234");
 		userList.put("user3", "3314");
@@ -98,7 +98,7 @@ public class FriendApp {
 			e.printStackTrace();
 		}
 
-		friends.add(new Friend(name, phone, dt));
+		friends.add(new Friend1(name, phone, dt));
 	}
 
 	private void edit() {
@@ -139,7 +139,7 @@ public class FriendApp {
 		if (friends.size() == 0) {
 			System.out.println("친구 목록이 없습니다. 추가 해주세요.");
 		} else {
-			for (Friend str : friends) {
+			for (Friend1 str : friends) {
 				System.out.println(str.toString());
 			}
 		}

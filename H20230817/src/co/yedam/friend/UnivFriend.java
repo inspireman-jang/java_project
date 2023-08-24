@@ -1,6 +1,6 @@
 package co.yedam.friend;
 
-public class UnivFriend extends Friend{
+public class UnivFriend extends Friend1{
 	private String univ;
 	private String major;
 	

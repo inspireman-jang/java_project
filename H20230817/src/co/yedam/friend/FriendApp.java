@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class FriendApp {
 	// 배열 > 컬랙션 > 파일 > DB에 저장하는 순서로 작업할 예정
 
-	Friend[] friends = new Friend[10];
+	Friend1[] friends = new Friend1[10];
 	Scanner scn = new Scanner(System.in);
 
 	// 컨트롤
@@ -82,7 +82,7 @@ public class FriendApp {
 			}
 		}
 
-		Friend friend = null;
+		Friend1 friend = null;
 
 		String name = printString("이름입력");
 		String phone = printString("연락처입력");
@@ -100,7 +100,7 @@ public class FriendApp {
 			friend = new CompFriend(name, phone, comp, dept);
 
 		} else {
-			friend = new Friend(name, phone);
+			friend = new Friend1(name, phone);
 		}
 
 		//

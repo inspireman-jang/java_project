@@ -23,7 +23,7 @@ public class ScanExe {
 //			System.out.println(line);
 //		}
 
-		List<Friend> friends = new ArrayList<>();
+		List<Friend1> friends = new ArrayList<>();
 
 		while (scn.hasNext()) {
 //			try {
@@ -41,7 +41,7 @@ public class ScanExe {
 			String[] data = line.split(" ");
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			try {
-				friends.add(new Friend(data[0], data[1], sdf.parse(data[2])));
+				friends.add(new Friend1(data[0], data[1], sdf.parse(data[2])));
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -50,7 +50,7 @@ public class ScanExe {
 
 //		}
 
-		for (Friend fnd : friends) {
+		for (Friend1 fnd : friends) {
 			System.out.println(fnd.toString());
 		}
 

@@ -1,8 +1,8 @@
 package co.yedam.friend;
 
-public class MainExe {
+public class MainExe1 {
 	public static void main(String[] args) {
-		FriendApp app = new FriendApp();
+		FriendApp1 app = new FriendApp1();
 		app.strat();
 	}
 }
